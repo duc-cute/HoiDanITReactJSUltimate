@@ -1,0 +1,62 @@
+/** @format */
+
+.register-container {
+  margin: 12px;
+  font-size: 16px;
+  .register-header {
+    text-align: right;
+    margin-right: 20px;
+    .btn-login {
+      margin: 0 8px;
+    }
+  }
+  .register-content {
+    padding: 25px 0;
+    .title {
+      text-align: center;
+    }
+
+    .form-register {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        input {
+          margin-top: 4px;
+          padding: 8px;
+          font-size: 14px;
+        }
+        span {
+          font-size: 20px;
+          position: absolute;
+          right: 10px;
+          bottom: 8px;
+          cursor: pointer;
+        }
+      }
+
+      .btn-register {
+        background-color: #060404eb;
+        width: 100%;
+        color: #fff;
+        padding: 6px;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      span {
+        font-size: 14px;
+        text-decoration: underline;
+      }
+
+      .back {
+        span {
+          cursor: pointer;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

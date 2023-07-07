@@ -1,0 +1,21 @@
+/** @format */
+
+.list-quiz-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+
+  .card {
+    img {
+      width: 100%;
+      height: 227px;
+      object-fit: cover;
+    }
+    .card-text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
+  }
+}

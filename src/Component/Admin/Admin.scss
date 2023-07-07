@@ -1,0 +1,19 @@
+/** @format */
+
+.admin-container {
+  display: flex;
+  .admin-sidebar {
+    text-align: center;
+    height: 100vh;
+  }
+
+  .admin-content {
+    width: 100%;
+    .admin-header {
+      border: 1px solid red;
+    }
+    .admin-main {
+      padding: 16px 0 0 16px;
+    }
+  }
+}

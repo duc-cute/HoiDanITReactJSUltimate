@@ -1,0 +1,74 @@
+/** @format */
+
+.login-container {
+  margin: 12px;
+  font-size: 16px;
+  .login-header {
+    text-align: right;
+
+    .btn-sign-up {
+      margin: 0 8px;
+    }
+    span {
+    }
+  }
+  .login-content {
+    padding: 25px 0;
+    .title {
+      text-align: center;
+    }
+    .description {
+    }
+    .form-login {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        input {
+          margin-top: 4px;
+          padding: 8px;
+          font-size: 14px;
+        }
+      }
+
+      .btn-login {
+        background-color: #060404eb;
+        width: 100%;
+        color: #fff;
+        padding: 4px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        .loader-icon {
+          animation: spin 1s infinite linear;
+          color: #00b4ff;
+        }
+
+        @keyframes spin {
+          from {
+            transform: scale(1) rotate(0deg);
+          }
+          to {
+            transform: scale(1) rotate(360deg);
+          }
+        }
+      }
+      span {
+        font-size: 14px;
+        text-decoration: underline;
+      }
+
+      .back {
+        span {
+          cursor: pointer;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
