@@ -15,11 +15,15 @@ import { FaGem } from "react-icons/fa";
 import sidebarBg from "../../assets/images/bg2.jpg";
 
 import { DiReact } from "react-icons/di";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const SideBar = (props) => {
   const { collapsed, toggled, handleToggleSidebar } = props;
+  const { t } = useTranslation();
+
+  const navigate = useNavigate();
   return (
     <>
       <ProSidebar
@@ -40,29 +44,38 @@ const SideBar = (props) => {
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
+              cursor: "pointer",
             }}
           >
             <DiReact size={"3em"} color={"00bfff"} />
-            <span>Hoi Dan IT</span>
+            <span onClick={() => navigate("/")}>Hoi Dan IT</span>
           </div>
         </SidebarHeader>
 
         <SidebarContent>
           <Menu iconShape="circle">
             <MenuItem icon={<MdDashboard />}>
-              Dashboard
+              {t("sideBar.dashboard")}
+
               <Link to="/admin" />
             </MenuItem>
           </Menu>
+
           <Menu iconShape="circle">
-            <SubMenu icon={<FaGem />} title="Features">
+            <SubMenu icon={<FaGem />} title={t("sideBar.features")}>
               <MenuItem>
-                {" "}
-                Quản lý Users
+                {t("sideBar.managerUser")}
                 <Link to="/admin/manager-user" />
               </MenuItem>
-              <MenuItem> Quản lý Bài Quiz</MenuItem>
-              <MenuItem> Quản lý Câu Hỏi</MenuItem>
+              <MenuItem>
+                {t("sideBar.managerQuiz")}
+
+                <Link to="/admin/manager-quizzes" />
+              </MenuItem>
+              <MenuItem>
+                <Link to="/admin/manager-questions" />
+                {t("sideBar.managerQuestions")}
+              </MenuItem>
             </SubMenu>
           </Menu>
         </SidebarContent>

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { postRegister } from "../../services/apiService";
 import { AiOutlineEye, AiFillEyeInvisible } from "react-icons/ai";
+import Language from "../Header/Language";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,6 +48,7 @@ const Login = () => {
         <button className="btn btn-login" onClick={() => navigate("/login")}>
           Login
         </button>
+        <Language />
       </div>
       <div className="register-content  mx-auto col-4">
         <h1 className="title text-center">HoiDanIT </h1>

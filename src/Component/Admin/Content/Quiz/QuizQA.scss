@@ -1,0 +1,101 @@
+/** @format */
+
+.question-container {
+  padding: 0 20px;
+
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .add-new-question {
+    .question-content {
+      margin-bottom: 30px;
+
+      .question-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .description {
+          flex: 5;
+          margin-right: 10px;
+        }
+
+        .group-upload {
+          flex: 3;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          justify-content: center;
+
+          .label-upload {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border-radius: 4px;
+            padding: 6px 10px;
+            border: none;
+            background-color: #eee;
+            cursor: pointer;
+          }
+        }
+
+        .btn-group {
+          flex: 2;
+          display: flex;
+          gap: 10px;
+
+          .btn-add {
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            color: rgb(55 182 70);
+          }
+          .btn-remove {
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            color: rgb(254 0 2);
+          }
+        }
+      }
+      .answer-content {
+        input {
+          font-size: 12px;
+        }
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+        .isCorrect {
+          width: 32px;
+          height: 32px;
+          margin-left: 20px;
+        }
+        .answer-name {
+          width: 60%;
+        }
+
+        .btn-group {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .btn-add {
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            color: rgb(55 182 70);
+          }
+          .btn-remove {
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            color: rgb(254 0 2);
+          }
+        }
+      }
+    }
+  }
+}

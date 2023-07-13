@@ -9,11 +9,35 @@
 
   .admin-content {
     width: 100%;
+
     .admin-header {
-      border: 1px solid red;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px 0 10px;
+      border-bottom: 1px solid #ccc;
+
+      span {
+        font-size: 24px;
+        cursor: pointer;
+        color: #302d28;
+      }
     }
     .admin-main {
-      padding: 16px 0 0 16px;
+      padding-top: 16px;
+      height: calc(100vh - 60px);
+    }
+
+    .admin-setting {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .language {
+        .dropdown-toggle::after {
+          display: none;
+        }
+      }
     }
   }
 }

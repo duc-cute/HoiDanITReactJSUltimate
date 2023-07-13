@@ -1,0 +1,45 @@
+{
+  "homePage": {
+    "title": "Cách hiệu quả hơn để đặt câu hỏi",
+    "description": "Hãy tạo một biểu mẫu Typeform thay vì một biểu mẫu nhàm chán. Với điều đó, bạn sẽ khiến khán giả của mình hài lòng và đáp ứng một cách nhiệt tình",
+    "getStartedUser": "Bắt đầu làm bài thi",
+    "getStarted": "Bắt đầu - Hoàn toàn miên phí"
+  },
+  "header": {
+    "home": "Trang Chủ",
+    "user": "Người Dùng",
+    "admin": "Quản Trị Viên",
+    "setting": "Cài Đặt",
+    "login": "Đăng Nhập",
+    "logout": "Đăng Xuất",
+    "signup": "Đăng Kí",
+    "profile": "Trang Cá Nhân",
+    "quiz": "Làm Bài Quiz"
+  },
+  "sideBar": {
+    "dashboard": "Thống Kê",
+    "features": "Chức Năng",
+    "managerUser": "Quản lý Users",
+    "managerQuiz": "Quản lý Bài Quiz",
+    "managerQuestions": "Quản lý Câu Hỏi"
+  },
+  "dashboardContent": {
+    "title": "Dữ Liệu Thống Kê",
+    "totalUser": "Tổng Người Dùng",
+    "totalQuizzes": "Tổng Bài Quiz",
+    "totalQuestions": "Tổng Câu Hỏi",
+    "totalAnswers": "Tổng Câu Trả Lời"
+  },
+  "managerUser": {
+    "title": "Quản Lý Người Dùng",
+    "addUser": "Thêm Mới Người Dùng"
+  },
+  "manageQuiz": {
+    "titleQuiz": "Quản Lý Bài Quiz",
+    "titleUpdate": "Cập Nhật Câu Hỏi/Đáp Án Bài Quiz",
+    "titleAsign": "Gán Bài Quiz Cho Người Dùng"
+  },
+  "manageQuestion": {
+    "titleQuestion": "Quản Lý Câu Hỏi"
+  }
+}

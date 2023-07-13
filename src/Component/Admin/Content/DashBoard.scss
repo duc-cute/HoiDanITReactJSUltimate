@@ -1,0 +1,40 @@
+/** @format */
+
+.dashboard-container {
+  margin: 0 20px;
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .dashboard-content {
+    display: flex;
+    gap: 20px;
+    min-height: 400px;
+
+    .dashboard-analytics {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 9;
+      gap: 20px;
+      .analytic-block {
+        flex: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+
+        span {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+    }
+    .dashboard-chart {
+      flex: 11;
+    }
+  }
+}

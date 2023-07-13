@@ -1,11 +1,33 @@
 /** @format */
-
+.detail-quiz-new-header {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0 0 24px;
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    .breadcrumb-item {
+      display: flex;
+      align-items: center;
+      a {
+        color: #000 !important;
+        text-decoration: none !important;
+      }
+      &.active {
+        a {
+          color: #ff11c3 !important;
+        }
+      }
+    }
+  }
+}
 .detail-quiz-container {
   margin-top: 80px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: 60px;
+  min-height: 600px;
   .left-content {
     border: 1px solid #456285;
     flex: 7;
@@ -55,5 +77,46 @@
   .right-content {
     border: 1px solid #333;
     flex: 3;
+    padding: 0 16px;
+
+    .main-timer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 24px;
+      font-weight: 600;
+      border-bottom: 1px dashed;
+      padding-bottom: 20px;
+    }
+
+    .main-question {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding: 0 12px;
+
+      .question {
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #946767;
+        border-radius: 50%;
+
+        &:hover {
+          color: red;
+        }
+
+        &.selected {
+          background-color: #d8b5b5;
+        }
+
+        &.clicked {
+          color: red;
+        }
+      }
+    }
   }
 }

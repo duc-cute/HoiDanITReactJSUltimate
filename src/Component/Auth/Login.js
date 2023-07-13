@@ -7,6 +7,7 @@ import { postLogin } from "../../services/apiService";
 import { useDispatch } from "react-redux";
 import { doLogin } from "../../redux/action/userAction";
 import { FaSpinner } from "react-icons/fa";
+import Language from "../Header/Language";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,6 +42,14 @@ const Login = () => {
       setIsLoading(false);
     }
   };
+
+  const handleOnkey = (e) => {
+    console.log("e", e);
+    console.log("key", e.key);
+    if (e && e.key === "Enter") {
+      handleLogin();
+    }
+  };
   return (
     <div className="login-container">
       <div className="login-header  ">
@@ -51,7 +60,7 @@ const Login = () => {
         >
           Sign up
         </button>
-        <span>Need help?</span>
+        <Language />
       </div>
       <div className="login-content  mx-auto col-4">
         <h1 className="title text-center">HoiDanIT</h1>
@@ -75,6 +84,7 @@ const Login = () => {
               placeholder="At least the 8 charaters"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => handleOnkey(e)}
             />
           </div>
           <span>Forgot password</span>

@@ -4,12 +4,20 @@
   margin: 12px;
   font-size: 16px;
   .login-header {
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 24px;
 
-    .btn-sign-up {
-      margin: 0 8px;
+    .dropdown-menu.show {
+      margin-top: 12px;
     }
-    span {
+
+    .dropdown-toggle::after {
+      display: none;
+    }
+    .btn-sign-up {
+      margin: 0 24px 0 12px;
     }
   }
   .login-content {

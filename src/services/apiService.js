@@ -46,6 +46,77 @@ const getQuizByUser = () => {
 const getDataQuiz = (id) => {
   return axios.get(`api/v1/questions-by-quiz?quizId=${id}`);
 };
+
+const postSubmitQuiz = (data) => {
+  return axios.post(`api/v1/quiz-submit`, { ...data });
+};
+
+const postCreateNewQuiz = (description, name, difficulty, quizImage) => {
+  const data = new FormData();
+  data.append("description", description);
+  data.append("name", name);
+  data.append("difficulty", difficulty);
+  data.append("quizImage", quizImage);
+  return axios.post("api/v1/quiz", data);
+};
+
+const getAllQuiz = () => {
+  return axios.get(`api/v1/quiz/all`);
+};
+
+const putUpdateQuiz = (id, description, name, difficulty, quizImage) => {
+  const data = new FormData();
+  data.append("id", id);
+  data.append("description", description);
+  data.append("name", name);
+  data.append("difficulty", difficulty);
+  data.append("quizImage", quizImage);
+  return axios.put("api/v1/quiz", data);
+};
+
+const deleteQuiz = (quizId) => {
+  return axios.delete(`api/v1/quiz/${quizId}`, { data: { id: quizId } });
+};
+
+const postCreateNewQuestionForQuiz = (quiz_id, description, questionImage) => {
+  const data = new FormData();
+  data.append("quiz_id", quiz_id);
+  data.append("description", description);
+  data.append("questionImage", questionImage);
+  return axios.post("api/v1/question", data);
+};
+
+const postCreateNewAnswerForQuestion = (
+  question_id,
+  description,
+  correct_answer
+) => {
+  return axios.post("api/v1/answer", {
+    question_id,
+    description,
+    correct_answer,
+  });
+};
+
+const postAssignQuiz = (quizId, userId) => {
+  return axios.post("api/v1/quiz-assign-to-user", { quizId, userId });
+};
+
+const getQuizWithQA = (quizId) => {
+  return axios.get(`api/v1/quiz-with-qa/${quizId}`);
+};
+
+const postUpsertQuizQA = (data) => {
+  return axios.post("api/v1/quiz-upsert-qa", { ...data });
+};
+
+const logout = (email, refresh_token) => {
+  return axios.post("api/v1/logout", { email, refresh_token });
+};
+
+const getOverview = () => {
+  return axios.get("api/v1/overview");
+};
 export {
   postCreateNewUser,
   getAllUser,
@@ -56,4 +127,16 @@ export {
   postRegister,
   getQuizByUser,
   getDataQuiz,
+  postSubmitQuiz,
+  postCreateNewQuiz,
+  getAllQuiz,
+  putUpdateQuiz,
+  deleteQuiz,
+  postCreateNewQuestionForQuiz,
+  postCreateNewAnswerForQuestion,
+  postAssignQuiz,
+  getQuizWithQA,
+  postUpsertQuizQA,
+  logout,
+  getOverview,
 };

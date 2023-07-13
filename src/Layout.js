@@ -13,6 +13,10 @@ import { ToastContainer } from "react-toastify";
 import App from "./App";
 import ListQuiz from "./Component/User/ListQuiz";
 import DetailQuiz from "./Component/User/DetailQuiz";
+import ManageQuiz from "./Component/Admin/Content/Quiz/ManageQuiz";
+import Questions from "./Component/Admin/Content/Questions/Questions";
+import PrivateRoute from "./routes/PrivateRoute";
+import { Suspense } from "react";
 
 const NotFound = () => {
   return (
@@ -23,17 +27,33 @@ const NotFound = () => {
 };
 const Layout = () => {
   return (
-    <>
+    <Suspense fallback="...is loading">
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
-          <Route path="users" element={<ListQuiz />} />
+          <Route
+            path="users"
+            element={
+              <PrivateRoute>
+                <ListQuiz />
+              </PrivateRoute>
+            }
+          />
         </Route>
         <Route path="/quiz/:id" element={<DetailQuiz />} />
 
-        <Route path="/admin" element={<Admin />}>
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute>
+              <Admin />
+            </PrivateRoute>
+          }
+        >
           <Route index element={<DashBoard />} />
           <Route path="manager-user" element={<ManagerUser />} />
+          <Route path="manager-quizzes" element={<ManageQuiz />} />
+          <Route path="manager-questions" element={<Questions />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
@@ -52,7 +72,7 @@ const Layout = () => {
         pauseOnHover
         theme="colored"
       />
-    </>
+    </Suspense>
   );
 };
 

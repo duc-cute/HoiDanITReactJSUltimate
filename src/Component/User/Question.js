@@ -1,8 +1,15 @@
 /** @format */
 import _ from "lodash";
-const Answer = ({ data, currQues, handleCheckAnswer }) => {
+import { useState } from "react";
+import Lightbox from "react-awesome-lightbox";
+
+const Question = ({ data, currQues, handleCheckAnswer }) => {
+  const [isPreviewImage, setIspreviewImage] = useState(false);
+
   if (_.isEmpty(data)) return <></>;
+
   const answers = data.answers;
+
   const handleCheckBox = (e, quizId, answerId) => {
     handleCheckAnswer(quizId, answerId);
   };
@@ -10,7 +17,19 @@ const Answer = ({ data, currQues, handleCheckAnswer }) => {
     <>
       <div className="ques-image">
         {data.image && (
-          <img src={`data:image/jpeg;base64,${data.image}`} alt="" />
+          <img
+            src={`data:image/jpeg;base64,${data.image}`}
+            alt=""
+            onClick={() => setIspreviewImage(true)}
+          />
+        )}
+
+        {isPreviewImage && (
+          <Lightbox
+            onClose={() => setIspreviewImage(false)}
+            image={`data:image/jpeg;base64,${data.image}`}
+            title={data.questionDescription}
+          ></Lightbox>
         )}
       </div>
 
@@ -27,7 +46,7 @@ const Answer = ({ data, currQues, handleCheckAnswer }) => {
                 <input
                   className="form-check-input"
                   type="checkbox"
-                  value=""
+                  checked={answer.isSelected}
                   id={`answerId-${answer.id}`}
                   onChange={(e) => handleCheckBox(e, data.quizId, answer.id)}
                 />
@@ -45,4 +64,4 @@ const Answer = ({ data, currQues, handleCheckAnswer }) => {
   );
 };
 
-export default Answer;
+export default Question;

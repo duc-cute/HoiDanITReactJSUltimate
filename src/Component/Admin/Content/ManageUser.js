@@ -6,6 +6,7 @@ import { getUserWithPaginate } from "../../../services/apiService";
 import ModalUpdateUser from "./ModalUpdateUser";
 import ModalDeleteUser from "./ModalDeleteUser";
 import TableUserPaginate from "./TableUserPaginate";
+import { useTranslation } from "react-i18next";
 const ManagerUser = () => {
   const LIMIT_USER = 6;
   const [pageCount, setPageCount] = useState(1);
@@ -18,6 +19,9 @@ const ManagerUser = () => {
 
   const [showModalDeleteUser, setShowModalDeleteUser] = useState(false);
   const [dataDelete, setDataDelete] = useState({});
+
+  const { t } = useTranslation();
+
   const handleClickUpdateUser = (user) => {
     setShowModalUpdateUser(true);
     setDataUpdate(user);
@@ -42,11 +46,12 @@ const ManagerUser = () => {
 
   return (
     <div className="manager-user-container">
-      <div className="title">Manager User</div>
+      <div className="title">{t("managerUser.title")}</div>
       <div className="user-content">
         <div className="btn-add-new">
           <button onClick={() => setShowModalCreateUser(!showModalCreateUser)}>
-            <FcPlus /> Add New User
+            <FcPlus />
+            {t("managerUser.addUser")}
           </button>
         </div>
         <div>
